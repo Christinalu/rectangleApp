@@ -1,29 +1,19 @@
 {
   "name": "rectangleapp",
-  "version": "1.0.0",
-  "description": "rectangle CRUD application",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "npm test"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Christinalu/rectangleApp.git"
-  },
-  "author": "Christina Zhu",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Christinalu/rectangleApp/issues"
-  },
-  "homepage": "https://github.com/Christinalu/rectangleApp#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mongodb": "^4.0.1"
-  },
-  "devDependencies": {
-    "mocha": "^9.0.2",
-    "supertest": "^6.1.4",
-    "tape": "^5.2.2"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.6",
+    "express": "^4.16.4",
+    "http-errors": "^1.6.3",
+    "jade": "~1.11.0",
+    "mongodb": "^4.0.1",
+    "morgan": "~1.9.1",
+    "path": "^0.12.7"
   }
 }
