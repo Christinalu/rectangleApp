@@ -9,8 +9,6 @@ services:
         restart: always
         ports:
             - "3000:3000"
-        environment:
-            WAIT_HOSTS: database: 27017
 
     database:
         image: 'mongo'
