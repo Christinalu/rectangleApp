@@ -62,6 +62,7 @@ router.post('/rectangle/new', async (req, res, next) => {
         height: Number(postValue.height),
         color: postValue.color,
         name: postValue.name,
+        age: Number(postValue.age),
       }, (err, result) => {
         if(err) throw err
         res.redirect('/')
@@ -106,7 +107,8 @@ router.post('/rectangle/update/:id', async (req, res, next) => {
           width: Number(postValue.width),
           height: Number(postValue.height),
           color: postValue.color,
-          name: postValue.name
+          name: postValue.name,
+          age: Number(postValue.age)
         }
       }, (err, result) => {
           if (err) throw err

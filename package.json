@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "production": "docker-compose -f docker-compose.yml up -d",
+    "build": "docker-compose -f docker-compose.yml build"
   },
   "dependencies": {
     "axios": "^0.21.1",

@@ -14,24 +14,24 @@
             <table>
                 <tbody>
                     <tr>
-                        <th>Name</th>
                         <th>ID</th>
+                        <th>Name</th>
                         <th>width</th>
                         <th>Height</th>
                         <th>Color</th>
+                        <th>Age</th>
                     </tr>
-                    <% var idLen = JSON.stringify(dataRow._id).length; %>
-                    <% var _id = JSON.stringify(dataRow._id).substring(1, idLen-1) %>
-                    <% var nameLen = JSON.stringify(dataRow.name).length; %>
-                    <% var name=JSON.stringify(dataRow.name).substring(1, nameLen-1); var ID=JSON.stringify(dataRow.ID); %>
-                    <% var width=JSON.stringify(dataRow.width); var height=JSON.stringify(dataRow.height); var colorLen = JSON.stringify(dataRow.color).length; %>
-                    <% var color=JSON.stringify(dataRow.color).substring(1, colorLen-1); %>
+                    <% var _id = dataRow._id %>
+                    <% var name=dataRow.name; var ID=dataRow.ID; %>
+                    <% var width=dataRow.width; var height=dataRow.height; var colorLen = dataRow.color; %>
+                    <% var color=dataRow.color; var age=dataRow.age;%>
                     <tr>
-                        <td><%= name %></td>
                         <td><%= ID %></td>
+                        <td><%= name %></td>
                         <td><%= width %></td>
                         <td><%= height %></td>
                         <td><%= color %></td>
+                        <td><%= age %></td>
                     </tr>
                 </tbody>
             </table>
