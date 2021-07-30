@@ -2,17 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Rectangles App</title>
 </head>
 <body>
-    <h1><%= title %></h1>
-    <div class="rectangles">
-    </div>
-    <div class="showInfo">
-        <table>
-        </table>
+    <div class="container">
+        <h1 class="d-inline">Rectangles</h1>
+        <a href='/rectangle'><button id="create" class="d-inline btn btn-info float-right">Create New</button></a><hr/>
+        <ul>
+        <% data.forEach(function(dataRow){ %>
+            <% var idLen = JSON.stringify(dataRow._id).length; %>
+            <% var _id=JSON.stringify(dataRow._id).substring(1, idLen-1); %>
+            <% var width=JSON.stringify(dataRow.width); var height=JSON.stringify(dataRow.height); var colorLen = JSON.stringify(dataRow.color).length; %>
+            <% var color=JSON.stringify(dataRow.color).substring(1, colorLen-1); %>
+            <li>
+                <a href='/rectangle/get/<%=_id%>'><svg width="<%= width %>" height="<%= height %>">
+                    <rect id="rect" width="<%= width %>" height="<%= height %>" style="fill: <%= color %>" />
+                </svg></a>
+            </li>
+        <% }); %>
+        </ul>
     </div>
 </body>
 </html>

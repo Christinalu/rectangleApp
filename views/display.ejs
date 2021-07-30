@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Display info</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Attributes of the Rectangle</h1><hr>
+        <% data.forEach(function(dataRow){ %>
+        <div class="showInfo">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>width</th>
+                        <th>Height</th>
+                        <th>Color</th>
+                    </tr>
+                    <% var idLen = JSON.stringify(dataRow._id).length; %>
+                    <% var _id = JSON.stringify(dataRow._id).substring(1, idLen-1) %>
+                    <% var nameLen = JSON.stringify(dataRow.name).length; %>
+                    <% var name=JSON.stringify(dataRow.name).substring(1, nameLen-1); var ID=JSON.stringify(dataRow.ID); %>
+                    <% var width=JSON.stringify(dataRow.width); var height=JSON.stringify(dataRow.height); var colorLen = JSON.stringify(dataRow.color).length; %>
+                    <% var color=JSON.stringify(dataRow.color).substring(1, colorLen-1); %>
+                    <tr>
+                        <td><%= name %></td>
+                        <td><%= ID %></td>
+                        <td><%= width %></td>
+                        <td><%= height %></td>
+                        <td><%= color %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><br/>
+        <div class="buttons">
+            <a href="/rectangle/delete/<%=_id%>"><button class="btn btn-raised btn-danger">Delete</button></a>
+            <a href="/rectangle/update/<%=_id%>"><button class="btn btn-warning">Modify</button></a>
+        </div>
+        <% }); %>
+    </div>
+</body>
+</html>

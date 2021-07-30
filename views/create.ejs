@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Create new rectangle</title>
 </head>
 <body>
+    <div class="container">
+    <h1>Create a new Rectangle</h1><hr>
     <form action="/rectangle/new" method="post">
-        <label for="name">Enter name: </label>
-        <input id="name" type="text" name="name">
+        <div class="form-group">
+            <label for="name">Enter name: </label>
+            <input id="name" class="form-control" type="text" name="name">
+        </div>
 
-        <label for="name">Enter width: </label>
-        <input id="width" type="number" name="width">
+        <div class="form-group">
+            <label for="width">Width: </label>
+            <input id="width" class="form-control" type="number" name="width">
+        </div>
 
-        <label for="height">Enter height: </label>
-        <input id="height" type="number" name="height">
+        <div class="form-group">
+            <label for="height">Height: </label>
+            <input id="height" class="form-control" type="number" name="height">
+        </div>
 
-        <label for="color">Enter color: </label>
-        <input id="color" type="color" name="color">
-
-        <input type="submit" value="OK">
+        <div class="form-group">
+            <label for="color">Color: </label>
+            <input id="color" class="form-control" type="text" name="color">
+        </div>
+       
+        <button type="submit" class="btn btn-primary float-right">Create</button>
+    
     </form>
+    </div>
 </body>
 </html>

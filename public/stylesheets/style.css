@@ -1,8 +1,19 @@
 body {
+  margin-top: 20vh;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+h1 {
   color: #00B7FF;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+button{
+  margin-right: 300px;
 }
