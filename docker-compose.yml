@@ -1,24 +1,23 @@
-version: '3'
+version: '3.9'
 services: 
-    backend:
+    server:
         build:
-            context: ../
-            dockerfile: docker/Dockerfile.production
-            args:
-                port: ${PORT}
-        env_file: 
-            - ../.env
+            context: .
+            dockerfile: Dockerfile
+        env_file:
+            - .env
         restart: always
         ports:
-            - "${PORT}:${PORT}"
+            - "3000:3000"
         environment:
             WAIT_HOSTS: database: 27017
+
     database:
-        image: mongo:4.0.1
+        image: 'mongo'
+        ports:
+            - "27017:27017"
         env_file: 
-            - ../.env
-        volumes: 
-            - ".${MONGO_DATA_DIR}:${MONGO_DATA_DIR}"
-        expose: 
-            - 27017
-        command: "mongod --smallfiles --logpath=${MONGO_LOG_FILE}"
+            - .env
+        environment: 
+            MONGODB_USERNAME: 'rectangle'
+            MONGODB_PASSWORD: 'mDMVXJ7XNwgRAI54'

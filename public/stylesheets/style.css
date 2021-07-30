@@ -17,3 +17,8 @@ td, th {
 button{
   margin-right: 300px;
 }
+
+span{
+  color: grey;
+  font-size: small;
+}

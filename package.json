@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "production": "docker-compose -f docker-compose.yml up -d",
-    "build": "docker-compose -f docker-compose.yml build"
+    "dev": "docker-compose up",
+    "build": "docker-compose up --build"
   },
   "dependencies": {
     "axios": "^0.21.1",
